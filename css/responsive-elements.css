@@ -1,0 +1,155 @@
+@charset "utf-8";
+/* CSS Document */
+nav h1 {
+    line-height: 80px;
+}
+/* the restraunt list wrapping*/
+#restaurants-list{
+	display:flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+	align-content:flex-start;
+}
+#restaurants-list li{
+	flex: 1 250px;
+	padding:0px;
+	border:0px;
+	display: flex;
+    flex-direction: column;
+    border-radius: 25px 0;
+}
+#restaurants-list li a {
+    margin: 25px;
+}
+
+#restaurants-list p {
+    margin: 0 25px;
+}
+#restaurants-list li h1 {
+    margin: 10px 25px;
+    font-size: 12pt;
+}
+#restaurants-list .restaurant-img{
+	border-radius:25px 0 0;
+}
+.filter-options{
+	height:auto;
+	display:flex;
+	flex-direction:row;
+}
+#footer, .inside #footer{
+	width:100%;
+	box-sizing:border-box;
+}
+
+/*reviews*/
+p.reviewTopInner, .date {
+    width: 50%;
+    background: #0d0d0d;
+    color: #fff;
+    display: inline-block;
+    padding: 15px 30px;
+    box-sizing: border-box;
+}
+.date{
+	text-align:right;
+}
+#reviews-list li{
+	padding: 0px;
+    box-sizing: border-box;
+    border-radius: 25px 0;
+	width: 100%;
+}
+.rate{
+	background-color: #ffa500;
+	padding: 5px 20px;
+	margin:20px!important;
+	border-radius: 5px;
+	color:#ffffff;
+	font-weight:bold;
+	box-sizing:border-box;
+	display:inline-block;
+}
+.comment{
+	padding: 10px 20px 40px 20px;
+}
+#reviews-container {
+    padding: 30px 40px 80px;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 1200px) {
+	body, header {
+    display: flex;
+    flex-direction: column;
+}
+header{
+	z-index:999;
+	position:fixed;
+	width: 100%;
+}
+.inside header{
+	position:inherit;
+	}
+
+#maincontent{
+	display:flex;
+	flex-direction:column;
+}
+section {
+	flex: 1 auto;
+}
+.inside #footer{
+	width:100%;
+}
+.inside #map-container{
+	width: 100%;
+	position:inherit!important;
+	height:45vh;
+}
+#restaurant-container, #reviews-container{
+	    width: 100%;
+    padding: 20px;
+	    box-sizing: border-box;
+}
+
+#breadcrumb{
+	width:100%;
+	box-sizing:border-box;
+}
+#restaurant-img{
+	width:100%;
+}
+#restaurant-cuisine{
+	width: 100%;
+}
+
+
+}
+@media (max-width: 600px) {
+	p.reviewTopInner, .date{
+		padding: 10px;
+	}
+	.filter-options{
+		flex-wrap:wrap;
+		padding: 10px 0;
+	}
+	.filter-options select{
+		width: 100%;
+	}
+}
+@media (max-width: 400px) {
+	p.reviewTopInner, .date{
+		padding: 10px;
+	}
+
+}
+@media (max-width: 300px) {
+	p.reviewTopInner, .date{
+		padding: 8px 15px;
+    font-size: 10px;
+    margin: 0px!important;
+    width: 100%;
+	}
+}
