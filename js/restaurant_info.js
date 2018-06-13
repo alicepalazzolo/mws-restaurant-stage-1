@@ -49,16 +49,22 @@ fetchRestaurantFromURL = (callback) => {
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
+
+
+
+  
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
+  
+    const image = document.getElementById('restaurant-img');
+  image.className = 'restaurant-img'
+  image.alt = restaurant.name;
+  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
-
-  const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
-
+  
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
 
@@ -118,23 +124,29 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
+  name.className = 'reviewTopInner';
   name.innerHTML = review.name;
   li.appendChild(name);
 
   const date = document.createElement('p');
+  date.className = 'reviewTopInner';
+  date.className = 'date';
   date.innerHTML = review.date;
   li.appendChild(date);
 
   const rating = document.createElement('p');
+  rating.className = 'rate';
   rating.innerHTML = `Rating: ${review.rating}`;
   li.appendChild(rating);
 
   const comments = document.createElement('p');
+  comments.className = 'comment';
   comments.innerHTML = review.comments;
   li.appendChild(comments);
 
   return li;
 }
+
 
 /**
  * Add restaurant name to the breadcrumb navigation menu
