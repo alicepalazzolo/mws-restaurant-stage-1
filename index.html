@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" role="application"></div>
     </section>
     <section>
       <div class="filter-options">
@@ -41,7 +41,17 @@
     <script type="text/javascript" src="js/service_worker.js"></script>
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqdQ8INYIFWCsCWB18CxLvn2U9i9hb32A&libraries=places&callback=initMap"></script>
-
+<script>
+if ('caches' in window) {
+   
+}
+if('serviceWorker' in navigator) {
+window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/js/service_worker.js');
+	console.log("Service Worker Working");
+  });
+}
+</script>
 
   <footer id="footer">
     Copyright (c) 20178 <a href="/"><strong>Alice's Restaurant Reviews</strong></a> All Rights Reserved.
