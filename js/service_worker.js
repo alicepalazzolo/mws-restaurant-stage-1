@@ -1,17 +1,22 @@
 // JavaScript Document
+if('serviceWorker' in navigator) {
+window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service_worker.js');
+  });
+}
+
+
 var filesToCache = [
-  '.',
-  'css/styles.css',
-  'https://normalize-css.googlecode.com/svn/trunk/normalize.css',
-  'css/responsive-elements.css',
-  'js/dbhelper.js',
-  'js/restaurant_info.js',
-  'js/service_worker.js',
-  'https://maps.googleapis.com/maps/api/js?key=AIzaSyBuoK8qG-gieie9wNNJncvBekqLgBaWP8w&libraries=places&callback=initMap'
+  '/css/styles.css',
+  '/css/responsive-elements.css',
+  '/js/dbhelper.js',
+  '/js/restaurant_info.js',
+  '/js/service_worker.js',
+
 
 ];
 
-var staticCacheName = 'restraunt_review_v1';
+var staticCacheName = 'restraunt_review_v4';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
